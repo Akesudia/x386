@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding:utf8 -*-
 
+"""
+
+将unicode编码内容解码为汉字
+
+"""
+
 import re
 from burp import IResponseInfo
 from burp import IBurpExtender
