@@ -39,14 +39,14 @@ except ImportError:
 
 class Resume(object):
     def __init__(self, threads=10):
-        self.url = 'http://xxxx/webservice/xxx/getMyResumeInfo?userID={0}'
+        self.url = 'http://xxxx/webservice/xxx/index.action?userID={0}'
         self.stop = False
         self.threads = threads
         self.headers = {'Connection': 'close'}
         self.queque = Queue.Queue()
         self.lock = threading.RLock()
         self.conn = MySQLdb.connect(user='root', db='xxxx', passwd='123456', host='localhost', charset='utf8')
-        self.sql = """insert into resume(user_name, resume_mobile, resume_sexy, resume_age, resume_permanent_address, resume_stay_address, resume_expected_position, resume_is_married) values(%s, %s, %s, %s, %s, %s, %s, %s)"""
+        self.sql = """insert into data(user_name, resume_mobile, resume_sexy, resume_age, resume_permanent_address, resume_stay_address, resume_expected_position, resume_is_married) values(%s, %s, %s, %s, %s, %s, %s, %s)"""
         self.cursor = self.conn.cursor()
         self.long_result = []
         for _ in xrange(1, 798403):
