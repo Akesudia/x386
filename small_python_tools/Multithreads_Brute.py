@@ -11,7 +11,6 @@ import threading
 
 以通达0A 2015 （更新日期为20160722）版本SQL注入漏洞为测试对象，爆破默认管理员admin的密码hash（unix 格式）
 
-
 使用到的多线程共享数据技术：
 
 Queue
