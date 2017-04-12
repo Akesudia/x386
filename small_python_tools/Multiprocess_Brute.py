@@ -20,6 +20,24 @@ Manager
 因为子进程会拷贝父进程的所有数据（但子进程中修改数据，不会反映到父进程中， 所以需要多进程同步数据技术）
 
 
+关于requests.post 中的timeout
+
+timeout 仅对连接过程有效，与响应体的下载无关。 timeout 并不是整个下载响应的时间限制，
+而是如果服务器在 timeout 秒内没有应答，将会引发一个异常（更精确地说，是在 timeout 秒内没有从基础套接字上接收到任何字节的数据时）
+
+与timeout 有关的exception
+
+requests.ReadTimeout
+
+    The server did not send any data in the allotted amount of time.
+
+requests.Timeout
+
+    The request timed out.
+
+    Catching this error will catch both ConnectTimeout and ReadTimeout errors
+
+
 """
 
 import sys
