@@ -13,6 +13,18 @@ echo "netmask 255.255.255.0"  >> /etc/network/interfaces
 echo "gateway 10.1.100.1"     >> /etc/network/interfaces
 
 
+###################################auto config DNS resolv
+echo "options timeout:1 attempts:1 rotate" > /etc/resolv.conf
+echo "nameserver 114.114.114.114" >> /etc/resolv.conf
+echo "nameserver 119.29.29.29" >> /etc/resolv.conf
+echo "nameserver 223.5.5.5" >> /etc/resolv.conf
+echo "nameserver 223.6.6.6" >> /etc/resolv.conf
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+
+#Timeout:超时时间, attempts:轮训列表的次数, rotate:从列表随机选取
+#114.114.114.114是114DNS，119.29.29.29是DNSPOD DNS，223.5.5.5和223.6.6.6是阿里云DNS， 8.8.8.8 是google dns
+
+
 ###################################auto apt source and update softwares
 
 cd /etc/apt/sources.list.d
