@@ -155,5 +155,17 @@ echo 'export CLASS_PATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar' >> ~/.
 echo 'export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH' >>~/.bashrc
 
 
+########################################auto config gradle
+
+gzip -d gradle-*.zip
+rm -rf gradle-*.zip
+mv gradle-* /usr/local/gradle
+cd /usr/local/gradle/bin
+chmod +x *
+
+echo 'export GRADLE_HOME=/usr/local/gradle' >> ~/.bashrc
+echo 'export PATH=$GRADLE_HOME/bin:$PATH' >>~/.bashrc
+
+
 
 

@@ -17,7 +17,7 @@ set javapath=C:\Program Files\Java\jdk1.8.0_121
 reg add "%regpath%" /v %evname% /t reg_sz /d "%javapath%" /f
 
 echo java加入PATH中
-wmic ENVIRONMENT where "name='path' and username='<system>'" set VariableValue="%path%;%JAVA_HOME%\bin;%JAVA_HOME\jre\bin%"
+wmic ENVIRONMENT where "name='path' and username='<system>'" set VariableValue="%path%;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin"
 
 rem 添加环境变量CLASS_PATH
 set evname=CLASS_PATH
@@ -34,7 +34,18 @@ set value=D:\sdk
 reg add "%regpath%" /v %evname% /t reg_sz /d "%value%" /f
 
 echo ANDROID_SDK_HOME可执行文件加入PATH中
-wmic ENVIRONMENT where "name='path' and username='<system>'" set VariableValue="%path%;%ANDROID_SDK_HOME%\tools;%ANDROID_SDK_HOME\platform-tools;%"
+wmic ENVIRONMENT where "name='path' and username='<system>'" set VariableValue="%path%;%ANDROID_SDK_HOME%\tools;%ANDROID_SDK_HOME%\platform-tools;"
+
+
+rem 添加环境变量GRADLE_HOME
+
+set regpath=HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment
+set evname=GRADLE_HOME
+set value=D:\gradle-3.5
+reg add "%regpath%" /v %evname% /t reg_sz /d "%value%" /f
+
+echo GRADLE_HOME可执行文件加入PATH中
+wmic ENVIRONMENT where "name='path' and username='<system>'" set VariableValue="%path%;%GRADLE_HOME%\bin;"
 
 
 
