@@ -1,5 +1,19 @@
 
-rem 首先需要安装好java、python、androidStudio
+rem 首先需要安装好java、androidStudio
+
+rem 需要实现下载好JDK、python
+
+rem 自动安装jdk
+JDK7.exe  /passive
+
+rem 自动安装python
+msiexec /i python-2.7.13.amd64.msi /norestart /quiet /passive
+
+rem 安装VCForPython27.msi
+msiexec /i VCForPython27.msi /norestart /quiet /passive
+
+rem 安装vc_redist.x64.exe
+vc_redist.x64.exe /install /passive /norestart 
 
 
 ::将python加入PATH中
@@ -41,7 +55,7 @@ rem 添加环境变量GRADLE_HOME
 
 set regpath=HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment
 set evname=GRADLE_HOME
-set value=D:\gradle-3.5
+set value=D:\gradle-2.9
 reg add "%regpath%" /v %evname% /t reg_sz /d "%value%" /f
 
 echo GRADLE_HOME可执行文件加入PATH中
