@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*- coding:utf8 -*-
 
+"""
+
+Coded by ForrestX386
+
+"""
 
 import re
 import sys
@@ -10,6 +15,7 @@ import argparse
 
 def parse_oui(oui_path):
     """
+     载入并解析oui.txt,生成'厂商标识':'厂商名称' 字典
     """
     oui_dict = dict()
     with codecs.open(oui_path, 'r', encoding='utf8') as fd:
@@ -25,11 +31,14 @@ def parse_oui(oui_path):
 
 def parse_arp_tab(arp_tab_path, oui_path):
     """
+    :param arp_tab_path: arp -n 生生结果保存文件路径（支持windows ar -a 和Linux的arp -n 结果格式）
+    :param oui_path: oui.txt的路径
+    :return:
     """
-
     parse_result = []
 
     oui_dict = parse_oui(oui_path)
+    # 支持  00:42:5a:38:9f:56 ， 00-42-5a-38-9f-56，00.42.5a.38.9f.56 3种格式的MAC地址
     mac_pattern = re.compile(
         '([0-9a-fA-F]{1,2}[-]){5}([0-9a-fA-F]{1,2})|([0-9a-fA-F]{1,2}[:]){5}([0-9a-fA-F]{1,2})|([0-9a-fA-F]{1,2}[.]){5}([0-9a-fA-F]{1,2})',
         re.VERBOSE | re.IGNORECASE)
