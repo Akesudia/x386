@@ -18,8 +18,19 @@
 	2) python oui.py --arp-tab-file ./arp_linux.txt
 
 
+    all output will be saved to result.txt
 
 #### some screenshot
+
+
+Linux:
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/x386/master/%E7%BD%91%E5%8D%A1%E5%8E%82%E5%95%86%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB%E5%B7%A5%E5%85%B7/images/oui_linux.png "")
+
+
+Windows:
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/x386/master/%E7%BD%91%E5%8D%A1%E5%8E%82%E5%95%86%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB%E5%B7%A5%E5%85%B7/images/oui_windows.png "")
 
 
 
