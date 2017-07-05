@@ -46,8 +46,13 @@ export TZ=Asia/Shanghai
 # for hide self
 export HISTTIMEFORMAT="%F %T `who -u am i 2>/dev/null | awk '{print $NF}' | sed -e 's/[()]//g'` `whoami` "
 export HISTFILE=/dev/null
-#export HISTSIZE=0
+export HISTSIZE=0
 
 #ln -sf ~/.bash_history /dev/null
 #ln -sf ~/.viminfo /dev/null
 #ln -sf ~/.mysql_history /dev/null
+
+
+export TMOUT=600
+
+
