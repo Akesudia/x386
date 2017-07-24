@@ -1,28 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-"""
-coded by ForrestX386
-
-https://linux.die.net/man/5/utmp
-
-w     /var/log/utmp
-last  /var/log/wtmp
-lastlog /var/log/lastlog
-lastb  /var/log/btmp
-
-chmod 660 /var/log/lastlog
-chmod 660 /var/log/utmp
-chmod 660 /var/log/wtmp
-chmod 660 /var/log/btmp
-
-
-    data = struct.pack(LAST_STRUCT, timestamp, ttyname, hostname)
-    try:
-        fp = open(filename, 'wb')
-        fp.seek(LAST_STRUCT_SIZE * p.pw_uid)
-        fp.write(data)
-"""
 
 import os
 import sys
@@ -143,10 +121,9 @@ class FakeLog(object):
             except Exception, e:
                 raise GeneralError('error occur: {0}'.format(e.message))
             else:
-                if to_remain:
-                    with open(self.FILE_PATH, 'wb') as fd:
-                        fd.write(to_remain)
-                    os.utime(self.FILE_PATH, (_atime, _mtime))  # restore a file atime, mtime
+                with open(self.FILE_PATH, 'wb') as fd:
+                    fd.write(to_remain)
+                os.utime(self.FILE_PATH, (_atime, _mtime))  # restore a file atime, mtime
 
         else:  # deal lastlog, 根据unix时间戳或用户名删除指定用户最后一次登录记录
             try:
@@ -183,10 +160,9 @@ class FakeLog(object):
             except Exception, e:
                 raise GeneralError('error occur: {0}'.format(e.message))
             else:
-                if to_remain:
-                    with open(self.FILE_PATH, 'wb') as fd:
-                        fd.write(to_remain)
-                    os.utime(self.FILE_PATH, (_atime, _mtime))  # restore a file atime, mtime
+                with open(self.FILE_PATH, 'wb') as fd:
+                    fd.write(to_remain)
+                os.utime(self.FILE_PATH, (_atime, _mtime))  # restore a file atime, mtime
 
     def add_log(self):
         """
