@@ -1,5 +1,6 @@
 <?php
 // fake phpinfo
+// 欺骗诱导式攻击
 date_default_timezone_set('PRC');
 $to = 'wenjian@vpgame.cn'; //replace with your email address
 $subject = 'Some one is viewing the fake phpinfo page!';

