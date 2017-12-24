@@ -8,12 +8,14 @@
 	 |  __/ _ \| '__| '__/ _ \/ __| __| > <  |__ < > _ <| '_ \ 
 	 | | | (_) | |  | | |  __/\__ \ |_ / . \ ___) | (_) | (_) |
 	 |_|  \___/|_|  |_|  \___||___/\__/_/ \_\____/ \___/ \___/ 
-	                                                           
-                                                           
 
-	
+​                                                           
+
+
 一些小工具
 
+**Forked from ForrestX386/x386**
+The original repository has been deleted or changed to private.
 
 免责声明：
 
